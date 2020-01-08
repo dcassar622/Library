@@ -1,0 +1,32 @@
+#topBar {
+    background-image: linear-gradient(to right, rgb(24, 201, 133) , rgb(25, 219, 203));
+    color: white; 
+    height: 150px;
+    position: relative; 
+    font-weight: 600;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif
+}
+
+.title {
+    padding: 3.5% 0px 5px 10%; 
+    font-size: 35px; 
+    font-weight: 600;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif
+    
+}
+
+.subtitle {
+    padding: 0% 0px 5px 10%;  
+    font-size: 22px; 
+    color: rgba(255, 255, 255, 0.877); 
+}
+
+table th {
+    text-align: left; 
+    font-weight: bold; 
+}
+
+.tablesContainer {
+    padding: 0px 0px 0px 70px; 
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif
+}
