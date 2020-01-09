@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>My Library</title>
-        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">  
     </head>
@@ -12,10 +11,19 @@
             <div class = "title">My Library</div>
             <div class = "subtitle">The Odin Project</div>
         </div>
-        <div class = "title" id = "books">Books</div>
-        <div class = "tablesContainer">
+        <div id = "booksTitleLabel">Books</div>
+        <div id = "tableContainer">
             <table>
-
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
             </table>
         </div>
         <script src="script.js"></script>
