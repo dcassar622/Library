@@ -55,18 +55,31 @@ function addBookToLibrary(book){
 function render(myLibrary) {
     let tbody = document.querySelector("tbody"); 
     let bookHTML = ""; 
-
     for (let book of myLibrary) {
         bookHTML += `<tr><td>${book.title}</td>
                          <td>${book.author}</td>
                          <td>${book.pages}</td>
-                         <td>${book.read}</td>
-                         <td></td>
+                         <td class = "status">${book.read}</td>
+                         <td class = "removeOuter"><div class = "removeButton">Remove</div></td>
+                     </tr>
                     `;
+
     }
     tbody.innerHTML = bookHTML; 
+    let remove = document.querySelectorAll(".removeButton"); 
+    remove.forEach((button) => {
+        button.addEventListener("click", () => {
+            removeBook(button.parentElement.parentElement[0]); 
+        })
+    })
 }
 
+function removeBook(e) {
+    
+
+    console.log(e); 
+
+}
 function showForm() {
     const inputForm = document.getElementById("inputForm"); 
     const mainBody = document.getElementById("mainBody"); 
@@ -94,5 +107,6 @@ window.onload = () => {
 addBookToLibrary(new Book("1984", "George Orwell", 328, "Read"));
 addBookToLibrary(new Book("The Hobbit", "J.R.R. Tolkien", 295, "Read"));
 addBookToLibrary(new Book("The Martian", "Andy Weir", 369, "Read"));
+addBookToLibrary(new Book("Neuromancer", "William Gibson", 271, "Not Read"));
 
 render(myLibrary); 

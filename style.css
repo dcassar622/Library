@@ -43,21 +43,26 @@ table {
 }
 
 td, th {
-    padding: 5px 15px 5px 5px; 
+    padding: 8px 20px 8px 5px;  
+    vertical-align: middle;
 }
 
 th {
     text-align: left;
-    border-bottom: solid 2px #ccc;
+    border-bottom: solid 2px #b1b1b1; 
 }
 
 td {
-    border-top: solid 1px #ccc;
+    border-top: solid 1px #b1b1b1; 
 }
 
 tbody>tr>:nth-child(1), thead>tr>:nth-child(1){
     padding-left: 15px; 
-   }
+}
+
+thead>tr>:nth-child(4){
+    text-align: center; 
+}
 
 #newBookButton {
     margin: 20px 0px 0px 68px; 
@@ -84,7 +89,7 @@ tbody>tr>:nth-child(1), thead>tr>:nth-child(1){
     padding: 0px 15px 0px 15px; 
     float: left; 
     line-height: 46px;
-    background-color: #cccccc; 
+    background-color: #ebebeb; 
     border-radius: 5px; 
     text-align: center;
 }
@@ -121,3 +126,17 @@ input[type=text] {
     border: solid 1px black; 
     border-radius: 3px;
  }
+
+.removeOuter {
+    padding: 8px 10px 8px 5px;  
+}
+.removeButton{
+    border-radius: 5px; 
+    padding: 8px 10px 8px 10px;  
+    text-align: center;
+    background: #ebebeb; 
+}
+
+.status {
+    text-align: center; 
+}
