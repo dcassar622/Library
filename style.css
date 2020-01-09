@@ -1,3 +1,7 @@
+#mainBodyContainer {
+    position: relative; 
+}
+
 #topBar {
     background-image: linear-gradient(to right, rgb(24, 201, 133) , rgb(25, 219, 203));
     color: white; 
@@ -13,19 +17,19 @@
     font-weight: 600;
 }
 
-.subtitle {
+.subtitle{
     padding: 0em 0px 5px 72px; 
     font-size: 22px; 
     color: rgba(255, 255, 255, 0.877); 
 }
 
 #booksTitleLabel {
-    padding: 20px 0px 10px 70px; 
+    padding: 20px 0px 20px 70px; 
     font-size: 35px; 
 }
 
-#booksTitleLabel, th {
-    color: rgb(48, 48, 48); 
+#booksTitleLabel, #newBookButton, th, .formSubtitle, #formTitle, .formButton {
+    color: rgb(54, 54, 54); 
     font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif;  
     font-weight: 600; 
 }
@@ -54,3 +58,66 @@ td {
 tbody>tr>:nth-child(1), thead>tr>:nth-child(1){
     padding-left: 15px; 
    }
+
+#newBookButton {
+    margin: 20px 0px 0px 68px; 
+}
+
+#addBookButton {
+    margin: 5px; 
+}
+
+#newBookButton, #addBookButton {
+    color: white; 
+    height: 46px; 
+    padding: 0px 15px 0px 15px; 
+    float: left; 
+    line-height: 46px; 
+    background-color: rgb(24, 201, 133); 
+    border-radius: 5px; 
+    text-align: center;
+}
+
+#cancelButton {
+    color: black; 
+    height: 46px; 
+    padding: 0px 15px 0px 15px; 
+    float: left; 
+    line-height: 46px;
+    background-color: #cccccc; 
+    border-radius: 5px; 
+    text-align: center;
+}
+
+#promptContainer {
+    top: 100px; 
+    margin: 0 auto; 
+}
+
+#inputForm {
+    position: absolute;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 5px;
+    width: 330px;
+    height: 400px;
+    top: 125px; 
+    z-index: 2;
+}
+
+#formTitle {
+    font-size: 35px;
+    margin: 20px 0px 20px 15px; 
+}
+
+.formSubtitle {
+    font-size: 22px; 
+    margin: 5px 0px 5px 15px; 
+}
+
+input[type=text] {
+    width: 290px; 
+    margin: 0px 15px 0px 15px;
+    height: 25px; 
+    border: solid 1px black; 
+    border-radius: 3px;
+ }

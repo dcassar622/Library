@@ -6,25 +6,46 @@
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">  
     </head>
-    <body>
-        <div id = "topBar">
-            <div class = "title">My Library</div>
-            <div class = "subtitle">The Odin Project</div>
+    <body id = "mainBody">
+        <div id = "mainBodyContainer">
+            <div id = "topBar">
+                <div class = "title">My Library</div>
+                <div class = "subtitle">The Odin Project</div>
+            </div>
+            <div id = "booksTitleLabel">Books</div>
+            <div id = "tableContainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Pages</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id = "newBookButton" onclick = "showForm()">New Book</div>
         </div>
-        <div id = "booksTitleLabel">Books</div>
-        <div id = "tableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Pages</th>
-                        <th>Status</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+        <div id = "inputForm">
+            <div id = "formTitle">New Book</div>
+            <div class = "formSubtitle">Title</div>
+            <input type = "text" id = "titleText">
+            <div class = "formSubtitle">Author</div>
+            <input type = "text" id = "authorText">
+            <div class = "formSubtitle">Pages</div>
+            <input type = "text" id = "pagesText">
+            <div class = "formSubtitle">Read Status</div>
+            <select id = "selectMenu">
+                <option id = "readText">Read</option>
+                <option id = "notReadText">Not Read</option>
+            </select>
+            <div id = "formButtons">
+                <div class = "formButton" id = "addBookButton" onclick = "getBookInfo()">Add book to Library</div>
+                <div class = "formButton" id = "cancelButton" onclick = "hideForm()">Cancel</div>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>
