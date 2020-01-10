@@ -118,6 +118,7 @@ thead>tr>:nth-child(4), .status, select {
     border-radius: 5px;
     top: 125px; 
     z-index: 3;
+    display: none; 
 }
 
 #formTitle {

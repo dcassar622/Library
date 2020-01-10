@@ -1,5 +1,5 @@
 let myLibrary = [];
-let table = document.querySelector("table"); 
+const table = document.querySelector("table"); 
 
 function Book(title, author, pages, read) {
 	this.title = title;
@@ -145,12 +145,6 @@ function hideForm() {
     document.getElementById("titleText").style.border = "solid 1px black"; 
     document.getElementById("authorText").style.border = "solid 1px black"; 
     document.getElementById("pagesText").style.border = "solid 1px black"; 
-}
-
-// hides input form on page load
-window.onload = () => {
-    const inputForm = document.getElementById("inputForm"); 
-    inputForm.style.display = "none"; 
 }
 
 addBookToLibrary(new Book("1984", "George Orwell", 328, "Read"));
