@@ -60,8 +60,8 @@ function render(myLibrary) {
     for (let book of myLibrary) {
 
         let a, b; 
-        if (book.read == "Read"){           // sets up correct value for read status
-            a = `${selected = "selected"}`; 
+        if (book.read == "Read"){           // gets correct value for read status
+            a = `${selected = "selected"}`; // and has that value selected when input into table
         } else {
             b = `${selected = "selected"}`; 
         } 
@@ -88,17 +88,17 @@ function render(myLibrary) {
 function createRemoveListeners() {
     document.querySelectorAll(".removeButton").forEach((button) => {
         button.addEventListener("click", () => {
-            removeBook(button.parentElement.parentElement); 
+            removeBook(button.parentElement.parentElement); // passes same row as remove button
         })
     })
 }
 
 function removeBook(selectedRow) {
-    const bookTitle = selectedRow.children[0].innerHTML; 
-    table.deleteRow(selectedRow.rowIndex); 
+    const bookTitle = selectedRow.children[0].innerHTML; // gets title of book on row
+    table.deleteRow(selectedRow.rowIndex);               // removes row from table
 
-    for (i = 0; i < myLibrary.length; i++) {
-        if (myLibrary[i].title == bookTitle) {
+    for (i = 0; i < myLibrary.length; i++) {             // finds book title in myLibrary
+        if (myLibrary[i].title == bookTitle) {           // and splices out book
             myLibrary.splice(i, 1); 
         }
     }
@@ -113,11 +113,12 @@ function createSelectListeners() {
 }
 
 function updatedReadStatus(select) {
+    //gets title of book on same row as select option was changed
     const bookTitle = select.parentElement.parentElement.children[0].innerHTML;
 
-    for (i = 0; i < myLibrary.length; i++) {
-        if (myLibrary[i].title == bookTitle) {
-            myLibrary[i].read = select.value; 
+    for (i = 0; i < myLibrary.length; i++) {   
+        if (myLibrary[i].title == bookTitle) {  // compares title against all books in myLibrary
+            myLibrary[i].read = select.value;   // and changes read value of appropriate book
         }
     }
 }
@@ -131,10 +132,19 @@ function showForm() {
                             (inputForm.offsetWidth / 2)) + "px"; // centers input form on window
 }
 
-// for the cancel button or when successfully inputing a new book
+// hides form after cancel/add book and resets values to empty
 function hideForm() {
     document.getElementById("inputForm").style.display = "none";
     document.getElementById("overlay").style.display = "none";
+
+    document.getElementById("titleText").value = ""; 
+    document.getElementById("authorText").value = ""; 
+    document.getElementById("pagesText").value = ""; 
+    document.getElementById("selectMenu").value = "Read"; 
+
+    document.getElementById("titleText").style.border = "solid 1px black"; 
+    document.getElementById("authorText").style.border = "solid 1px black"; 
+    document.getElementById("pagesText").style.border = "solid 1px black"; 
 }
 
 // hides input form on page load

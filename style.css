@@ -1,5 +1,6 @@
-#mainBodyContainer {
-    position: relative; 
+body {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif;
+    color: rgb(43, 43, 43); 
 }
 
 #topBar {
@@ -8,7 +9,6 @@
     height: 150px;
     position: relative; 
     font-weight: 600;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif
 }
 
 .title {
@@ -17,7 +17,7 @@
     font-weight: 600;
 }
 
-.subtitle{
+.subtitle {
     padding: 0em 0px 5px 72px; 
     font-size: 22px; 
     color: rgba(255, 255, 255, 0.877); 
@@ -29,8 +29,6 @@
 }
 
 #booksTitleLabel, #newBookButton, th, .formSubtitle, #formTitle, .formButton {
-    color: rgb(54, 54, 54); 
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,Arial,sans-serif;  
     font-weight: 600; 
 }
 
@@ -45,6 +43,7 @@ table {
 td, th {
     padding: 8px 20px 8px 5px;  
     vertical-align: middle;
+    font-size: 18px;
 }
 
 th {
@@ -60,19 +59,18 @@ tbody>tr>:nth-child(1), thead>tr>:nth-child(1){
     padding-left: 15px; 
 }
 
-thead>tr>:nth-child(4){
+thead>tr>:nth-child(4), .status, select {
     text-align: center; 
 }
 
 #newBookButton {
     margin: 20px 0px 0px 70px; 
+    font-size: 18px; 
 }
 
 #addBookButton {
     margin: 5px;
 }
-
-
 
 #newBookButton, #addBookButton {
     color: white; 
@@ -83,6 +81,10 @@ thead>tr>:nth-child(4){
     background-color: rgb(24, 201, 133); 
     border-radius: 5px; 
     text-align: center;
+}
+
+#newBookButton:hover, #addBookButton:hover {
+    background-color: rgb(10, 187, 119); 
 }
 
 #cancelButton {
@@ -139,6 +141,7 @@ input[type=text] {
 .removeOuter {
     padding: 8px 10px 8px 5px;  
 }
+
 .removeButton{
     border-radius: 5px; 
     padding: 8px 10px 8px 10px;  
@@ -146,8 +149,8 @@ input[type=text] {
     background: #ebebeb; 
 }
 
-.status, select {
-    text-align: center; 
+.removeButton:hover, #cancelButton:hover {
+    background: #d4d4d4; 
 }
 
 #overlay {
