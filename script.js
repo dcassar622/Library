@@ -54,21 +54,38 @@ function addBookToLibrary(book){
 }
 
 function render(myLibrary) {
-
-    let tbody = document.querySelector("tbody"); 
+    
     let bookHTML = ""; 
-   
+
     for (let book of myLibrary) {
+
+        let a, b; 
+        if (book.read == "Read"){           // sets up correct value for read status
+            a = `${selected = "selected"}`; 
+        } else {
+            b = `${selected = "selected"}`; 
+        } 
+
         bookHTML += `<tr><td>${book.title}</td>
                          <td>${book.author}</td>
                          <td>${book.pages}</td>
-                         <td class = "status">${book.read}</td>
+                         <td class = "status">
+                            <select>
+                                <option ${a}>Read</option>
+                                <option ${b}>Not Read</option>
+                            </select>
+                         </td>
                          <td class = "removeOuter"><div class = "removeButton">Remove</div></td>
                      </tr>
                     `;
     }
 
-    tbody.innerHTML = bookHTML; 
+    document.querySelector("tbody").innerHTML = bookHTML; 
+    createRemoveListeners(); 
+    createSelectListeners(); 
+}
+
+function createRemoveListeners() {
     document.querySelectorAll(".removeButton").forEach((button) => {
         button.addEventListener("click", () => {
             removeBook(button.parentElement.parentElement); 
@@ -76,23 +93,42 @@ function render(myLibrary) {
     })
 }
 
-function removeBook(e) {
-    const bookTitle = e.children[0].innerHTML; 
-    table.deleteRow(e.rowIndex); 
+function removeBook(selectedRow) {
+    const bookTitle = selectedRow.children[0].innerHTML; 
+    table.deleteRow(selectedRow.rowIndex); 
 
     for (i = 0; i < myLibrary.length; i++) {
         if (myLibrary[i].title == bookTitle) {
             myLibrary.splice(i, 1); 
         }
     }
-
 }
+
+function createSelectListeners() {
+    document.querySelectorAll("select").forEach((select) => {
+        select.addEventListener("change", () => {
+            updatedReadStatus(select);
+        })
+    })
+}
+
+function updatedReadStatus(select) {
+    const bookTitle = select.parentElement.parentElement.children[0].innerHTML;
+
+    for (i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].title == bookTitle) {
+            myLibrary[i].read = select.value; 
+        }
+    }
+}
+
 function showForm() {
     const inputForm = document.getElementById("inputForm"); 
 
-    inputForm.style.left = (window.innerWidth / 2 - 165) + "px"; // centers input form on window
     inputForm.style.display = "block";
     document.getElementById("overlay").style.display = "block";
+    inputForm.style.left = ((window.innerWidth / 2) - 
+                            (inputForm.offsetWidth / 2)) + "px"; // centers input form on window
 }
 
 // for the cancel button or when successfully inputing a new book

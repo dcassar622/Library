@@ -32,20 +32,22 @@
         </div>
         <div id = "inputForm">
             <div id = "formTitle">New Book</div>
-            <div class = "formSubtitle">Title</div>
-            <input type = "text" id = "titleText">
-            <div class = "formSubtitle">Author</div>
-            <input type = "text" id = "authorText">
-            <div class = "formSubtitle">Pages</div>
-            <input type = "text" id = "pagesText">
-            <div class = "formSubtitle">Read Status</div>
-            <select id = "selectMenu">
-                <option id = "readText">Read</option>
-                <option id = "notReadText">Not Read</option>
-            </select>
-            <div id = "formButtons">
-                <div class = "formButton" id = "addBookButton" onclick = "getBookInfo()">Add book to Library</div>
-                <div class = "formButton" id = "cancelButton" onclick = "hideForm()">Cancel</div>
+            <div id = "inputsContainer">
+                <div class = "formSubtitle">Title</div>
+                <input type = "text" id = "titleText">
+                <div class = "formSubtitle">Author</div>
+                <input type = "text" id = "authorText">
+                <div class = "formSubtitle">Pages</div>
+                <input type = "text" id = "pagesText">
+                <div class = "formSubtitle">Read Status</div>
+                <select id = "selectMenu">
+                    <option class = "readText" id = "readText">Read</option>
+                    <option class = "notReadText" id = "notReadText">Not Read</option>
+                </select>
+                <div id = "formButtons">
+                    <div class = "formButton" id = "addBookButton" onclick = "getBookInfo()">Add book to Library</div>
+                    <div class = "formButton" id = "cancelButton" onclick = "hideForm()">Cancel</div>
+                </div>
             </div>
         </div>
         <script src="script.js"></script>
